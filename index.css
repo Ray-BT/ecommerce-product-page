@@ -103,6 +103,18 @@ main {
     justify-content: center;
 }
 
+@media screen and (min-width: 350px) and (max-width: 700px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 300px;
+        justify-content: center;
+    }
+
+    .small-img-group, .small-img {
+        display: none;
+    }
+}
+
 .section1 {
     width: 800px;
     padding: 20px 50px 50px 50px;
