@@ -19,80 +19,126 @@
  /*HEADER*/
 
 header {
+    border: 1px solid magenta;
     display: flex;
-    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 2rem;
+}
+
+.hamburger-logo-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    
+    gap: 1.6rem;
 }
 
-menu {
+.hamburguer {
     display: flex;
-    gap: 60px;
-    width: 1300px;
-    padding: 30px 20px 40px 20px;
-    border-bottom: 1px solid rgba(63, 63, 63, 0.131);
-    align-self: center;
-    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    cursor: pointer;
 }
 
-.div-img-logo {
-    height: 25px;
-    align-self: center;
+.hamburguer .line {
+    background-color: rgb(113, 113, 121);
+    width: 1.5rem;
+    height: 0.2rem;
+}
+
+#menuclose {
+    width: 1.5rem;
+    height: 1.5rem;
+    
 }
 
 .nav-menu {
-    height: 25px;
-    align-self: center;
-    
-}
-
-.nav-menu ul {
-    display: flex;
-    font-size: 1.2em;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
     font-family: var(--ff-fonte-principal);
-    gap: 30px;
-    list-style: none;
+    transition: .5s;
 }
 
-.nav-menu a {
-    text-decoration: none;
-    color: rgb(95, 94, 94);
-    
+.slide-menu {
+    background-color: white;
+    height: 100%;
+    width: 66vw;
+
+    padding: 2.3rem;
+    transition: .5s;
 }
 
-.nav-menu a:hover {
-    color: hsl(26, 100%, 55%);
-    transition: ease-in-out .2s;
+.slide-menu img {
+    transition: transform 0.5s ease;
 }
 
-.div-cart-avatar {
+.slide-menu img:hover {
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+
+.slide-menu ul {
+    margin-top: 5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
     display: flex;
-    gap: 50px;
-    justify-content: end;
-    width: 100%;
+    flex-direction: column;
+    gap: 2.3rem;
+    list-style: none
+
+}
+
+.slide-menu ul a, :active, :visited {
+    color: rgb(75, 75, 80);;
+    text-decoration: unset;
+}
+
+.slide-menu ul a:hover {
+    text-decoration: underline;
+    opacity: 0.75;
+}
+
+.div-cart-avatar-group {
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.2rem;
+}
+
+.cart {
+    cursor: pointer;
 }
 
 .img-avatar {
-    display: flex;
-    justify-content: end;
-    width: 50px;
-    height: 50px;
-    align-self: center;
+    width: 2.4rem;
+    cursor: pointer;
 }
 
-.img-cart {
-    width: 25px;
-    height: 25px;
-    align-self: center;
+.img-avatar:hover {
+    border: 2px solid orange;
+    border-radius: 50%;
 }
 
 
-
-
+.hidden {
+    display: none;
+}
 
 
 /*MAIN CONTENTS*/
 
+/*
 main {
     padding-top: 50px;
 }

@@ -9,27 +9,39 @@
 </head>
 <body>
     <header>
-        <menu>
-            <div class="div-img-logo">
-                <img src="images/logo.svg" alt="sneakers, logo do site">
+        <div class="hamburger-logo-group">
+            <div class="hamburguer">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="Collections.html">Collections</a></li>
-                    <li><a href="Men.html">Men</a></li>
-                    <li><a href="Women.html">Women</a></li>
-                    <li><a href="About.html">About</a></li>
-                    <li><a href="Contact.html">Contact</a></li>
-                </ul>
             
+                <img src="images/logo.svg" alt="sneakers, logo do site">
+            
+        
+        
+            <nav class="nav-menu hidden">
+                <div class="slide-menu">
+                    <img id="menuclose" src="images/icon-close.svg" alt="icone em x indicando para fechar">
+                    <ul>
+                        <li><a href="Collections.html">Collections</a></li>
+                        <li><a href="Men.html">Men</a></li>
+                        <li><a href="Women.html">Women</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+               </div>  
             </nav>
-            <div class="div-cart-avatar">
+        </div>  
+        <div class="div-cart-avatar-group">
+            <div class="cart">
                 <img src="images/icon-cart.svg" class="img-cart" alt="icone de carrinho de compras">
-                <img src="images/image-avatar.png" class="img-avatar" alt="icone do perfil do usuario">
+                <div class="cart-count">3</div>
             </div>
-        </menu>
+        <img src="images/image-avatar.png" class="img-avatar" alt="icone do perfil do usuario">
+        </div>
     </header>
-
+    <!--
     <main class="grid-container">
         <section class="section1">
             <div class="big-img">
@@ -66,6 +78,8 @@
                 </p>
             </div>
         </section>
-    </main>
+    </main>-->
+
+    <script src="index.js"></script>
 </body>
 </html>
