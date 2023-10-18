@@ -14,6 +14,13 @@
 
 :root {
     --ff-fonte-principal: "kumbh sans";
+    --cinza: rgb(113, 113, 121);
+    --cinza-claro: rgb(190, 190, 190);
+    --laranja-claro: rgb(253, 243, 223);
+}
+
+body {
+    font-family: var(--ff-fonte-principal);
 }
 
  /*HEADER*/
@@ -168,7 +175,7 @@ header {
     width: 100%;
 }
 
-.previus {
+.previous {
     left: 4%;
 }
 
@@ -177,7 +184,7 @@ header {
 }
 
 .next {
-    right: 4%;
+    right: 3%;
 }
 
 .next:hover {
@@ -203,9 +210,94 @@ header {
 }
 
 
+/*PRODUCT*/
+
+.product {
+    padding: 2.2rem 2.4rem;
+}
+
+.product .company-name {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: orange;
+
+}
+
+.title {
+    color: rgb(40, 40, 42);
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-top: 1.3rem;
+    line-height: 118%;
+}
+
+.description {
+    font-size: 1.5rem;
+    margin-top: 1.6rem;
+    line-height: 165%;
+    color: var(--cinza);
+}
+
+.price-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.price-wrapper .group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.price-wrapper .price {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.price-wrapper .discount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: orange;
+    background-color: var(--laranja-claro);
+    margin-left: 1.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.old-price {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: rgb(190, 190, 190);
+    text-decoration: line-through;
+}
+
+.counter-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(247, 247, 247);
+    padding: 2.0rem 2.4rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+}
+
+.counter-wrapper .counter {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#btnMins, #btnPlus {
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
 /*MAIN CONTENTS*/
 
-
+/*
 main {
     padding-top: 50px;
 }
