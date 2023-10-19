@@ -329,7 +329,8 @@ header {
     position: absolute;
     right: 1rem;
     top: calc(calc(100%) + 1rem);
-    width: 35.5rem;
+    width: 21.5rem;
+    
 
     z-index: 1;
     background-color: white;
