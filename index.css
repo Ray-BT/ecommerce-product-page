@@ -325,8 +325,11 @@ header {
     filter: brightness(300%);
 }
 
+
+
 .cart {
     position: absolute;
+    
     right: 1rem;
     top: calc(calc(100%) + 1rem);
     width: 21.5rem;
@@ -364,6 +367,7 @@ header {
 
     border-radius: .5rem;
     padding: .5rem;
+    cursor: pointer;
 }
 
 /*MAIN CONTENTS*/
