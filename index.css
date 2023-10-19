@@ -26,7 +26,7 @@ body {
  /*HEADER*/
 
 header {
-    border: 1px solid magenta;
+    /*border: 1px solid magenta;*/
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -213,7 +213,7 @@ header {
 /*PRODUCT*/
 
 .product {
-    padding: 2.2rem 2.4rem;
+    padding: 2.2rem 2.4rem 4.4rem 2.4rem;
 }
 
 .product .company-name {
@@ -289,10 +289,40 @@ header {
     font-weight: 700;
 }
 
-#btnMins, #btnPlus {
+#btnMinus, #btnPlus {
     cursor: pointer;
     padding: 1rem;
     border-radius: 0.5rem;
+}
+
+#btnMinus:hover, #btnPlus:hover {
+    opacity: .5;
+    background-color: var(--laranja-claro);
+}
+
+.btn {
+    background-color: orange;
+    color: white;
+
+    margin-top: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+
+    font-size: 1.55rem;
+    font-weight: 700;
+    border-radius: 1rem;
+
+    padding: 1.9rem;
+    box-shadow: 0px 20px 30px 0px var(--laranja-claro);
+    cursor: pointer;
+}
+
+.btn img {
+    height: 1.5rem;
+    filter: brightness(300%);
 }
 
 /*MAIN CONTENTS*/
