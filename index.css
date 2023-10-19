@@ -73,6 +73,7 @@ header {
     height: 100vh;
     font-family: var(--ff-fonte-principal);
     transition: .5s;
+    z-index: 2000;
 }
 
 .slide-menu {
@@ -82,6 +83,7 @@ header {
 
     padding: 2.3rem;
     transition: .5s;
+    
 }
 
 .slide-menu img {
