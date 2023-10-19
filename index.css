@@ -334,6 +334,36 @@ header {
 
     z-index: 1;
     background-color: white;
+    border-radius: .5rem;
+}
+
+.cart .cart-header {
+    border-bottom: 1px solid var(--cinza-claro);
+    padding: 2.4rem 2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.cart .msg-empty {
+    color: var(--cinza);
+    text-align: center;
+    font-size: 1.6rem;
+
+    padding: 4.0rem 0;
+}
+
+.checkout {
+    background-color: orange;
+    color: white;
+
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    margin: 1rem;
+
+    border-radius: .5rem;
+    padding: .5rem;
 }
 
 /*MAIN CONTENTS*/
