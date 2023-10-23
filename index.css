@@ -260,7 +260,7 @@ header {
 }
 
 .price-wrapper .discount {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: orange;
     background-color: var(--laranja-claro);
@@ -270,7 +270,7 @@ header {
 }
 
 .old-price {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: rgb(190, 190, 190);
     text-decoration: line-through;
@@ -334,7 +334,7 @@ header {
     
     right: 1.5rem;
     top: calc(calc(100%) + .1rem);
-    width: 19.5rem;
+    width: 21.5rem;
     
 
     z-index: 1;
@@ -347,6 +347,51 @@ header {
     padding: 2.4rem 2rem;
     font-size: 1.6rem;
     font-weight: 700;
+}
+
+.products-in-cart {
+    
+}
+
+.item {
+    margin: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.products-in-cart .product-img {
+    width: 5rem;
+    border-radius: .5rem;
+    
+}
+
+.products-in-cart .details {
+    color: var(--cinza);
+    font-size: 1rem;
+    
+}
+
+.details .price-group {
+    display: flex;
+    gap: .6rem;
+}
+
+.price-group .total-amount {
+    font-weight: 700;
+    
+    color: black;
+}
+
+#btnDelete {
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+#btnDelete:hover {
+    cursor: pointer;
+    background-color: var(--laranja-claro);
 }
 
 .cart .msg-empty {
@@ -365,11 +410,15 @@ header {
     font-size: 1.6rem;
     font-weight: 700;
 
-    margin: 1rem;
+    margin: 1.1rem;
 
     border-radius: .5rem;
     padding: .5rem;
     cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }
 
 /*MAIN CONTENTS*/
