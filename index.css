@@ -116,7 +116,7 @@ header {
     opacity: 0.75;
 }
 
-.div-cart-avatar-group {
+.cart-avatar-group {
     /*border: 1px solid green;*/
     display: flex;
     flex-direction: row;
@@ -340,6 +340,7 @@ header {
     z-index: 1;
     background-color: white;
     border-radius: .5rem;
+    box-shadow: 0 1rem 1rem 1rem rgba(0, 0, 0, 0.105), 0 1rem 2rem 1rem rgba(0, 0, 0, 0.105);
 }
 
 .cart .cart-header {
@@ -386,6 +387,7 @@ header {
 
 #btnDelete {
     padding: .5rem;
+    
     border-radius: .5rem;
 }
 

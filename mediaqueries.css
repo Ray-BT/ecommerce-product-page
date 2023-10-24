@@ -1,0 +1,122 @@
+@media screen and (min-width: 1440px) {
+    :root {
+        --ff-fonte-principal: "kumbh sans";
+        --cinza: rgb(113, 113, 121);
+        --cinza-claro: rgb(190, 190, 190);
+        --laranja-claro: rgb(253, 243, 223);
+    }
+
+    .container {
+        width: 70%;
+        margin: 0 auto;
+    }
+    header {
+        padding: 0;
+        border-bottom: 1px solid var(--cinza-claro);
+    }
+
+    .hamburger-logo-group {
+        gap: 5.4rem;
+    }
+
+    .hamburguer {
+        display: none;
+    }
+
+    .nav-menu {
+        display: block;
+        position: unset;
+        height: unset;
+    }
+
+    .slide-menu {
+        width: unset;
+        padding: 0;
+    }
+
+    .slide-menu img {
+        display: none;
+    }
+
+    .slide-menu ul {
+        flex-direction: row;
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: var(--cinza-claro);
+        gap: 3.4rem;
+    }
+
+    .slide-menu ul a {
+        display: block;
+        padding: 4rem 0;
+        border-bottom: 3px solid transparent;
+    }
+
+    .slide-menu ul a:hover {
+        color: black;
+        text-decoration: none;
+        font-weight: 700;
+        border-bottom: 3px solid orange;
+    }
+
+    .cart-avatar-group {
+        gap: 4.5rem;
+    }
+
+    .btnCart .cart-count {
+        font-size: 1.1rem;
+    }
+
+    .img-avatar {
+        width: 5rem;
+    }
+
+    .img-cart {
+        width: 2rem;
+    }
+
+    .cart {
+        right: -.1rem;
+        top: 90%;
+        width: 35.5rem;
+    }
+
+    .price-group {
+        font-size: 2rem;
+    }
+
+    .product-name {
+        font-size: 1.5rem;
+    }
+
+    .item {
+        font-size: 2em;
+    }
+    
+    #btnDelete {
+        width: 40px;
+        height: 40px;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10rem;
+        padding: 8rem 5rem;
+    }
+
+    .lightbox {
+        width: 100%;
+    }
+
+    .product-hero {
+        border-radius: 1.5rem;
+    }
+
+    .previous, .next {
+        display: none;
+    }
+}
+
