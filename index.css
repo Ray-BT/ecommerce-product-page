@@ -211,6 +211,10 @@ header {
     transition: all .3s ease;
 }
 
+.thumb-gallery {
+    display: none;
+}
+
 
 /*PRODUCT*/
 
