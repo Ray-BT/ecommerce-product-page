@@ -16,8 +16,16 @@ const heroImg = document.querySelector('.product-hero')
 const btnNext = document.querySelector('.next')
 const btnPrevious = document.querySelector('.previous')
 
+const btnAddToCard = document.querySelector('.btn')
+const cartCount = document.querySelector('.cart-count')
+const productInShoppingCart = document.querySelector('.products-in-cart')
+
 //Numerical Variables
 let productCounterValue = 1
+let productsInCart = 0
+let price = 250.0
+let discount = 0.5
+
 
 hamburguer.addEventListener('click', onHamburguerClick)
 menuclose.addEventListener('click', onMenuCloseClick)
@@ -33,6 +41,12 @@ gallery.forEach(img => {
 
 btnNext.addEventListener('click', handleBtnClickNext)
 btnPrevious.addEventListener('click', handleBtnClickPrevious)
+
+btnAddToCard.addEventListener('click', addToCart)
+
+
+constbtnAddToCard = document.querySelector('btn')
+
 
 
 function onHamburguerClick() {
@@ -105,4 +119,42 @@ function setHeroImage(imageIndex) {
     })
     //set active thumbnail
     gallery[imageIndex-1].classList.add('active')
+}
+
+function addToCart() {
+    productsInCart += productCounterValue
+
+    const productHTMLElement = `
+    <div class="item">
+        <img class="product-img" src="images/image-product-1-thumbnail.jpg" alt="imagem do produto">
+        <div class="details">
+            <div class="product-name">Autumn Limited Edition...</div>
+            <div class="price-group">
+                <div class="price">$${price*discount}</div> x
+                <div class="count">${productsInCart}</div>
+                <div class="total-amount">$375.00</div>
+            </div>
+        </div>
+        <img id="btnDelete" src="images/icon-delete.svg" alt="icone de deletar">
+    </div>
+    `
+    
+    productInShoppingCart.innerHTML = productHTMLElement
+
+    updateCart()
+}
+
+function updateCart() {
+    updateCartIcon()
+}
+
+function updateCartIcon() {
+    cartCount.textContent = productsInCart
+    if (productsInCart == 0) {
+        if (!cartCount.classList.contains('hidden')) {
+            cartCount.classList.add('hidden')
+        }
+    } else {
+        cartCount.classList.remove('hidden')
+    }
 }
