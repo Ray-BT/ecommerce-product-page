@@ -20,6 +20,17 @@ const btnAddToCard = document.querySelector('.btn')
 const cartCount = document.querySelector('.cart-count')
 const productInShoppingCart = document.querySelector('.products-in-cart')
 
+const msgEmpty = document.querySelector('.msg-empty')
+const checkout = document.querySelector('.checkout')
+
+const overlay = document.querySelector('.overlay')
+const lightbox = document.querySelector('.lightbox')
+
+let lightboxGallery
+let lightboxHero
+
+heroImg.addEventListener('click', onHeroImgClick)
+
 //Numerical Variables
 let productCounterValue = 1
 let productsInCart = 0
@@ -130,9 +141,9 @@ function addToCart() {
         <div class="details">
             <div class="product-name">Autumn Limited Edition...</div>
             <div class="price-group">
-                <div class="price">$${price*discount}</div> x
+                <div class="price">$${(price*discount)}</div> x
                 <div class="count">${productsInCart}</div>
-                <div class="total-amount">$375.00</div>
+                <div class="total-amount">$${(price*discount*productsInCart).toFixed(2)}</div>
             </div>
         </div>
         <img id="btnDelete" src="images/icon-delete.svg" alt="icone de deletar">
@@ -142,10 +153,18 @@ function addToCart() {
     productInShoppingCart.innerHTML = productHTMLElement
 
     updateCart()
+
+    const btnDelete = document.querySelector('#btnDelete')
+    btnDelete.addEventListener('click', onBtnDeleteClick)
+
 }
+
+
 
 function updateCart() {
     updateCartIcon()
+    updateMsgEmpty()
+    updateCheckoutButton()
 }
 
 function updateCartIcon() {
@@ -157,4 +176,112 @@ function updateCartIcon() {
     } else {
         cartCount.classList.remove('hidden')
     }
+}
+
+function updateMsgEmpty() {
+    if (productsInCart == 0) {
+        if (msgEmpty.classList.contains('hidden')) {
+            msgEmpty.classList.remove('hidden')
+        }
+    } else {
+        if (!msgEmpty.classList.contains('hidden')) {
+            msgEmpty.classList.add('hidden')
+        }
+    }
+}
+
+function updateCheckoutButton() {
+    if (productsInCart == 0){
+        if (!checkout.classList.contains('hidden')) {
+            checkout.classList.add('hidden')
+        }
+    } else {
+        cartCount.classList.remove('hidden')
+    }
+}
+
+function onBtnDeleteClick() {
+    productsInCart--
+    updateCart()
+
+    const el = document.querySelector('.count')
+    const totalAmount = document.querySelector('.total-amount')
+    el.innerHTML = productsInCart
+    totalAmount.innerHTML = `$${(price*discount*productsInCart.toFixed(2))}`
+
+    if (productsInCart == 0) {
+        productInShoppingCart.innerHTML = ''
+    }
+}
+
+function onHeroImgClick() {
+    if (window.innerWidth >= 1440) {
+        if (overlay.childElementCount == 1) {
+            const newNode = lightbox.cloneNode(true)
+            overlay.appendChild(newNode)
+
+            const btnOverlayClose = document.querySelector('#btnOverlayClose')
+            btnOverlayClose.addEventListener('click', onBtnOverlayClose)
+
+            lightboxGallery = overlay.querySelectorAll('.pic')
+            lightboxHero = overlay.querySelector('.product-hero')
+            lightboxGallery.forEach(img => {
+                img.addEventListener('click', onThumbClickLightbox)
+            })
+
+            const btnOverlayNext = overlay.querySelector('.next')
+            const btnOverlayPrevious = overlay.querySelector('.previous')
+            btnOverlayNext.addEventListener('click', handleBtnClickNextOverlay)
+            btnOverlayPrevious.addEventListener('click', handleBtnClickNextOverlay)
+        }
+        overlay.classList.remove('hidden')
+    }
+}
+
+function onBtnOverlayClose() {
+    overlay.classList.add('hidden')
+}
+
+function onThumbClickLightbox(event) {
+    //clear active state for all thumbnails
+    lightboxGallery.forEach(img => {
+        img.classList.remove('active')
+    })
+    //set active thumbnail
+    event.target.parentElement.classList.add('active')
+    //update hero image
+    lightboxHero.src = event.target.src.replace('-thumbnail', '')
+}
+
+function handleBtnClickNextOverlay() {
+    let imageIndex = getOverlayCurrentImageIndex()
+    imageIndex++
+    if (imageIndex > 4) {
+        imageIndex = 1
+    }
+    setOverlayHeroImage(imageIndex)
+}
+
+function handleBtnClickPreviousOverlay() {
+    let imageIndex = getOverlayCurrentImageIndex()
+    imageIndex--
+    if (imageIndex < 1) {
+        imageIndex = 4
+    }
+    setOverlayHeroImage(imageIndex)
+}
+
+function getOverlayCurrentImageIndex() {
+    const imageIndex = parseInt(lightboxHero.src.split('\\').pop().split('/').pop().replace('.jpg', '').replace('image-product-', '')) 
+    return imageIndex
+}
+
+function setOverlayHeroImage(imageIndex) {
+    lightboxHero.src = `./images/image-product-${imageIndex}.jpg`
+    //images are not sync
+    lightboxGallery.forEach(img => {
+        img.classList.remove('active')
+    })
+    //set active thumbnail
+    lightboxGallery[imageIndex-1].classList.add('active')
 }
