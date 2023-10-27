@@ -157,13 +157,13 @@
     }
 
     .title {
-        font-size: 4.4rem;
+        font-size: 2.8rem;
         margin-top: 1.8rem;
     }
 
     .description {
         margin-top: 3.5rem;
-        font-size: 1.63rem;
+        font-size: 1rem;
     }
 
     .price-wrapper {
@@ -226,13 +226,14 @@
     }
     
     .overlay .next {
-        display: flex;
+        
         right: 0;
+        
         transform: translateX(50%);
     }
     
     .overlay .previous {
-        display: flex;
+        
         left: 0;
         transform: translateX(-50%);
     }
